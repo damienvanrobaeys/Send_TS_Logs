@@ -87,12 +87,10 @@ $Current_Folder = split-path $MyInvocation.MyCommand.Path
 Try
 	{
 		$tsenv = New-Object -COMObject Microsoft.SMS.TSEnvironment
-		$Script:ClientID = $tsenv.Value("TS_Sharepoint_App_ID") 	
+		$Script:ClientID = $tsenv.Value("TS_Client_ID") 	
 		$Script:Secret = $tsenv.Value("TS_Client_Secret") 	
-		$Script:SharePoint_SiteID = $tsenv.Value("TS_Cient_ID") 	
+		$Script:SharePoint_SiteID = $tsenv.Value("TS_SharePoint_Site_ID") 	
 		$Script:Tenant = $tsenv.Value("TS_Tenant_Name") 	
-
-		
 		$Script:Send_Teams_Notif = $tsenv.Value("TS_Send_Teams_Notif") 			
 		$Script:LastActionName = $tsenv.Value("LastActionName") 		
 	}
